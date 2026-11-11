@@ -1,11 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>EFL_hello</title>
-</head>
-<body>
-    <h1>EFL application</h1>
-    <p>{{ message }}</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% if page == "login" %}
+  {% set screen_title = "Login" %}
+{% elif page == "quote" %}
+  {% set screen_title = "Savings quote" %}
+{% elif page == "history" %}
+  {% set screen_title = "Transaction history" %}
+{% else %}
+  {% set screen_title = "EFL application" %}
+{% endif %}
+
+{% block title %}{{ screen_title }} | EFL{% endblock %}
+{% block content %}
+  {% if page == "login" %}
+    <section class="login-layout">
+      <div class="welcome-panel">
+        <p class="eyebrow">WELCOME TO EFL</p>
+        <h1>Make your money<br>go further.</h1>
+        <p>Manage currency exchange and explore savings plans in one place.</p>
+        <div class="welcome-decoration" aria-hidden="true">£ &nbsp; $ &nbsp; €</div>
+      </div>
+      <div class="panel login-panel">
+        <div class="section-heading">
+          <p class="eyebrow">YOUR ACCOUNT</p>
+          <h2>Sign in</h2>
+          <p>Enter your details to continue.</p>
+        </div>
+        <form id="login-form" class="form-stack">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+          <div class="form-meta"><a href="#login-help">Forgot password?</a></div>
+          <button type="submit" class="button button-primary">Sign in</button>
+          <p id="login-message" class="form-message" role="status"></p>
+          <p class="form-note">New to EFL? <a href="#create-account">Create an account</a></p>
+        </form>
+      </div>
+    </section>
+  {% elif page == "quote" %}
+    <section class="page-heading">
+      <p class="eyebrow">PLAN YOUR FUTURE</p>
+      <h1>Savings quote</h1>
+      <p>Enter your savings goals to explore the available investment plans.</p>
+    </section>
+    <section class="panel quote-layout">
+      <form id="quote-form" class="form-stack">
+        <h2>Your savings details</h2>
+        <label for="plan">Investment plan</label>
+        <select id="plan" name="plan" required>
+          {% for plan in plans %}
+            <option value="{{ plan[0] }}">{{ plan[1] }}</option>
+          {% endfor %}
+        </select>
+        <label for="lump-sum">Initial lump sum (£)</label>
+        <input id="lump-sum" name="lump_sum" type="number" min="0" step="0.01" value="1000" required>
+        <label for="monthly-amount">Monthly contribution (£)</label>
+        <input id="monthly-amount" name="monthly_amount" type="number" min="0" step="0.01" value="150" required>
+        <label for="years">Investment period</label>
+        <select id="years" name="years">
+          <option value="1">1 year</option>
+          <option value="5" selected>5 years</option>
+          <option value="10">10 years</option>
+        </select>
+        <button type="submit" class="button button-primary">View plan details</button>
+        <p id="quote-message" class="form-message" role="status"></p>
+      </form>
+      <aside class="quote-aside">
+        <span class="aside-icon" aria-hidden="true">↗</span>
+        <h2>Choose with confidence</h2>
+        <p>Compare the plan limits, expected return range and monthly fee before deciding what suits your goals.</p>
+        <a class="button button-secondary" href="{{ url_for('pages.converter_page') }}">Exchange currency</a>
+      </aside>
+    </section>
+    <section class="plan-grid" aria-label="Available savings plans">
+      {% for plan in plans %}
+        <article class="panel plan-card">
+          <p class="eyebrow">PLAN {{ plan[0] }}</p>
+          <h2>{{ plan[1] }}</h2>
+          <p>Expected return: {{ plan[5] }}%–{{ plan[6] }}% p.a.</p>
+          <p>Monthly fee: {{ plan[7] }}%</p>
+          <p>Minimum monthly amount: £{{ plan[3] }}</p>
+        </article>
+      {% endfor %}
+    </section>
+  {% elif page == "history" %}
+    <section class="page-heading">
+      <p class="eyebrow">YOUR ACTIVITY</p>
+      <h1>Transaction history</h1>
+      <p>Review your recent currency exchanges.</p>
+    </section>
+    <section class="panel history-panel">
+      <div class="table-heading">
+        <div>
+          <h2>Recent transactions</h2>
+          <p>{{ transactions|length }} transaction{{ '' if transactions|length == 1 else 's' }}</p>
+        </div>
+        <button type="button" class="button button-secondary" onclick="window.print()">Print or export</button>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>From</th><th>To</th><th>Amount</th><th>Fee (USD)</th><th>Converted amount</th></tr>
+          </thead>
+          <tbody>
+            {% for transaction in transactions %}
+              <tr>
+                <td>{{ transaction.created_at }}</td>
+                <td>{{ transaction.from_currency }}</td>
+                <td>{{ transaction.to_currency }}</td>
+                <td>{{ "%.2f"|format(transaction.amount) }}</td>
+                <td>{{ "%.2f"|format(transaction.fee_usd) }}</td>
+                <td>{{ "%.2f"|format(transaction.converted_amount) }}</td>
+              </tr>
+            {% else %}
+              <tr><td class="empty-state" colspan="6">No conversions yet. Your completed exchanges will appear here.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  {% else %}
+    <section class="panel">
+      <h1>EFL application</h1>
+      <p>{{ message }}</p>
+    </section>
+  {% endif %}
+{% endblock %}

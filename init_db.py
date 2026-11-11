@@ -1,12 +1,11 @@
-import sqlite3
+import config
+import database
 
-DB_FILE = "efl.db"
 
-with open("schema.sql", encoding ="utf-8") as f:
-    script = f.read()
-connection = sqlite3.connect(DB_FILE)
-connection.executescript(script)
-connection.commit()
-connection.close()
+def main(db_file=None):
+    database.init_db(db_file)
+    print("Database created:", db_file or config.DB_FILE)
 
-print("Database created :",DB_FILE)
+
+if __name__ == "__main__":
+    main()

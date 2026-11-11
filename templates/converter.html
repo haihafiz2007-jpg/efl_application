@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Currency exchange | EFL{% endblock %}
+{% block content %}
+  <section class="page-heading">
+    <p class="eyebrow">SIMPLE, SECURE EXCHANGE</p>
+    <h1>Currency exchange</h1>
+    <p>Convert between our supported currencies with a clear fee breakdown.</p>
+  </section>
+  <section class="panel converter-panel">
+    <form id="convert-form" class="form-stack">
+      <label for="amount">Amount to convert</label>
+      <input id="amount" name="amount" type="text" inputmode="decimal" placeholder="e.g. 500" required>
+      <div class="currency-fields">
+        <div>
+          <label for="from">From</label>
+          <select id="from" class="currency-list" name="from"></select>
+        </div>
+        <button type="button" id="swap-currencies" class="swap-button" aria-label="Swap currencies">⇄</button>
+        <div>
+          <label for="to">To</label>
+          <select id="to" class="currency-list" name="to"></select>
+        </div>
+      </div>
+      <button type="submit" class="button button-primary">Convert</button>
+    </form>
+    <p id="warning" class="warning" role="status"></p>
+    <p id="error" class="error" role="alert"></p>
+    <div id="result-card" class="result-card" hidden>
+      <p class="eyebrow">ESTIMATED RESULT</p>
+      <p id="result" class="result"></p>
+    </div>
+    <p class="form-note">Conversion amounts must be between 300 and 5,000.</p>
+  </section>
+{% endblock %}
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/converter.js') }}"></script>
+{% endblock %}

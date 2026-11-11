@@ -1,24 +1,33 @@
 """The HTML pages."""                         # Docstring: what this file does
-from flask import Blueprint, render_template  # Flask tools: a route group and the page filler
+from flask import Blueprint, current_app, redirect, render_template, url_for  # Flask tools: a route group and the page filler
+
+import database
+import config
 
 bp = Blueprint("pages", __name__)             # Create the group; app.py registers it
 
-@bp.route("/")                                # The home page
-def index():                                  # Runs when the browser asks for /
-    return render_template("index.html")      # Fill in templates/index.html and send it
+@bp.route("/")
+def index():
+    return redirect(url_for("pages.login_page"))
+
+@bp.route("/hello")
+def hello_page():
+    message = database.get_greeting(current_app.config["DB_FILE"])
+    return render_template("index.html", message=message)
 
 @bp.route("/login")                           # Login page (built on Thursday)
 def login_page():                             # Runs for /login
-    return render_template("login.html")      # Send the page
+    return render_template("index.html", page="login")
 
 @bp.route("/converter")                       # The converter page
 def converter_page():                         # Runs for /converter
-    return render_template("converter.html")  # Send the page
+    return render_template("converter.html", page="converter")
 
 @bp.route("/quote-page")                      # Quote page (Tuesday)
 def quote_page():                             # Runs for /quote-page
-    return render_template("quote.html")      # Send the page
+    return render_template("index.html", page="quote", plans=config.PLANS)
 
 @bp.route("/history-page")                    # History page (Thursday)
 def history_page():                           # Runs for /history-page
-    return render_template("history.html")    # Send the page
+    transactions = database.list_conversion_transactions(current_app.config["DB_FILE"])
+    return render_template("index.html", page="history", transactions=transactions)

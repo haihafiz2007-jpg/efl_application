@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}EFL Currency and Savings{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-page="{{ page|default('login') }}">
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('pages.login_page') }}">
+      <span class="brand-mark">EFL</span>
+      <span>Currency and Savings</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ url_for('pages.login_page') }}" class="{{ 'active' if page == 'login' else '' }}">Login</a>
+      <a href="{{ url_for('pages.converter_page') }}" class="{{ 'active' if page == 'converter' else '' }}">Currency exchange</a>
+      <a href="{{ url_for('pages.quote_page') }}" class="{{ 'active' if page == 'quote' else '' }}">Savings quote</a>
+      <a href="{{ url_for('pages.history_page') }}" class="{{ 'active' if page == 'history' else '' }}">History</a>
+    </nav>
+  </header>
+  <main class="page-shell">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">EFL Currency and Savings</footer>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
