@@ -71,6 +71,8 @@ a { color: var(--teal-dark); }
 }
 
 .site-nav a:hover, .site-nav a.active { background: var(--navy-soft); color: #fff; }
+.nav-button { padding: 0.65rem 0.8rem; border: 0; border-radius: 6px; background: transparent; color: #e8edf5; cursor: pointer; font: inherit; font-size: 0.92rem; }
+.nav-button:hover { background: var(--navy-soft); color: #fff; }
 
 .page-shell {
   width: min(1120px, calc(100% - 2rem));
@@ -148,6 +150,9 @@ a { color: var(--teal-dark); }
 .form-meta { display: flex; justify-content: flex-end; font-size: 0.88rem; }
 .form-note { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
 .form-message { min-height: 1.25rem; margin: 0; color: var(--teal-dark); font-size: 0.9rem; }
+.account-create { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.checkbox-label { display: flex; align-items: center; gap: 0.6rem; font-weight: 400 !important; }
+.checkbox-label input { width: 18px; min-height: 18px; }
 
 .button {
   display: inline-flex;
@@ -187,6 +192,15 @@ a { color: var(--teal-dark); }
 .plan-card { padding: 1.25rem; }
 .plan-card h2 { min-height: 2.8rem; font-size: 1.05rem; }
 .plan-card p:not(.eyebrow) { color: var(--muted); font-size: 0.9rem; }
+.quote-results { margin-top: 1.25rem; padding: clamp(1rem, 3vw, 1.75rem); }
+.quote-results h2 { margin: 0.25rem 0; }
+.projection-chart { width: min(100%, 560px); margin: 1.5rem auto; }
+.projection-chart svg { display: block; width: 100%; overflow: visible; }
+.projection-chart text { fill: var(--ink); font-size: 12px; }
+.projection-chart circle { fill: var(--teal); }
+.chart-line { fill: none; stroke: var(--teal); stroke-width: 3; }
+.account-panel { max-width: 600px; padding: clamp(1.25rem, 4vw, 2rem); }
+.saved-quotes-panel { margin-top: 1.25rem; }
 
 .history-panel { padding: clamp(1rem, 3vw, 1.75rem); }
 .table-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
@@ -202,6 +216,7 @@ td { font-size: 0.9rem; }
   .site-header { align-items: flex-start; flex-direction: column; gap: 0.5rem; }
   .site-nav { width: 100%; }
   .site-nav a { padding: 0.55rem 0.65rem; font-size: 0.85rem; }
+  .nav-button { padding: 0.55rem 0.65rem; font-size: 0.85rem; }
   .login-layout { grid-template-columns: 1fr; }
   .welcome-panel { min-height: 240px; padding: 2rem; }
   .welcome-decoration { margin-top: 0.6rem; }

@@ -1,6 +1,7 @@
 import sqlite3
 
 import app as app_module
+import database
 
 
 def test_home_page_opens_login():
@@ -15,8 +16,13 @@ def test_home_page_opens_login():
     assert b"Sign in" in login_response.data
 
 
-def test_wireframe_pages_render():
+def test_wireframe_pages_render(tmp_path, monkeypatch):
+    db_file = str(tmp_path / "test.db")
+    database.init_db(db_file)
+    monkeypatch.setitem(app_module.app.config, "DB_FILE", db_file)
     client = app_module.app.test_client()
+    with client.session_transaction() as session:
+        session["user_id"] = 1
     assert b"Currency exchange" in client.get("/converter").data
     assert b"Savings quote" in client.get("/quote-page").data
     assert b"Transaction history" in client.get("/history-page").data

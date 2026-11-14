@@ -17,6 +17,10 @@
       <a href="{{ url_for('pages.converter_page') }}" class="{{ 'active' if page == 'converter' else '' }}">Currency exchange</a>
       <a href="{{ url_for('pages.quote_page') }}" class="{{ 'active' if page == 'quote' else '' }}">Savings quote</a>
       <a href="{{ url_for('pages.history_page') }}" class="{{ 'active' if page == 'history' else '' }}">History</a>
+      {% if current_user_id %}
+        <a href="{{ url_for('pages.account_page') }}" class="{{ 'active' if page == 'account' else '' }}">Account</a>
+        <button id="logout-button" class="nav-button" type="button">Sign out</button>
+      {% endif %}
     </nav>
   </header>
   <main class="page-shell">

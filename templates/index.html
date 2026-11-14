@@ -6,6 +6,8 @@
   {% set screen_title = "Savings quote" %}
 {% elif page == "history" %}
   {% set screen_title = "Transaction history" %}
+{% elif page == "account" %}
+  {% set screen_title = "Account details" %}
 {% else %}
   {% set screen_title = "EFL application" %}
 {% endif %}
@@ -36,6 +38,19 @@
           <p id="login-message" class="form-message" role="status"></p>
           <p class="form-note">New to EFL? <a href="#create-account">Create an account</a></p>
         </form>
+        <form id="register-form" class="form-stack account-create">
+          <h2 id="create-account">Create an account</h2>
+          <label for="register-name">Name</label>
+          <input id="register-name" name="name" autocomplete="name" maxlength="120" required>
+          <label for="register-email">Email</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <label for="register-phone">Phone (optional)</label>
+          <input id="register-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
+          <button type="submit" class="button button-secondary">Create account</button>
+          <p id="register-message" class="form-message" role="status"></p>
+        </form>
       </div>
     </section>
   {% elif page == "quote" %}
@@ -57,13 +72,8 @@
         <input id="lump-sum" name="lump_sum" type="number" min="0" step="0.01" value="1000" required>
         <label for="monthly-amount">Monthly contribution (£)</label>
         <input id="monthly-amount" name="monthly_amount" type="number" min="0" step="0.01" value="150" required>
-        <label for="years">Investment period</label>
-        <select id="years" name="years">
-          <option value="1">1 year</option>
-          <option value="5" selected>5 years</option>
-          <option value="10">10 years</option>
-        </select>
-        <button type="submit" class="button button-primary">View plan details</button>
+        <label class="checkbox-label"><input id="save-quote" name="save" type="checkbox"> Save this quote to my history</label>
+        <button type="submit" class="button button-primary">Compare projections</button>
         <p id="quote-message" class="form-message" role="status"></p>
       </form>
       <aside class="quote-aside">
@@ -72,6 +82,24 @@
         <p>Compare the plan limits, expected return range and monthly fee before deciding what suits your goals.</p>
         <a class="button button-secondary" href="{{ url_for('pages.converter_page') }}">Exchange currency</a>
       </aside>
+    </section>
+    <section id="quote-results" class="panel quote-results" aria-live="polite" hidden>
+      <div class="table-heading">
+        <div>
+          <p class="eyebrow">YOUR PROJECTION</p>
+          <h2 id="quote-result-title"></h2>
+          <p id="recommendation"></p>
+        </div>
+        <button id="save-quote-button" type="button" class="button button-secondary" hidden>Save to history</button>
+      </div>
+      <div id="projection-chart" class="projection-chart" role="img" aria-label="Savings projection chart"></div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Scenario</th><th>Period</th><th>Estimated value</th><th>Profit</th><th>Fees</th><th>Tax</th></tr></thead>
+          <tbody id="projection-rows"></tbody>
+        </table>
+      </div>
+      <p class="form-note">Projections are estimates, not guaranteed returns. Investment values can fall as well as rise.</p>
     </section>
     <section class="plan-grid" aria-label="Available savings plans">
       {% for plan in plans %}
@@ -89,6 +117,51 @@
       <p class="eyebrow">YOUR ACTIVITY</p>
       <h1>Transaction history</h1>
       <p>Review your recent currency exchanges.</p>
+    </section>
+    <section class="panel history-panel saved-quotes-panel">
+      <div class="table-heading">
+        <div>
+          <h2>Saved savings quotes</h2>
+          <p>{{ quotes|length }} projection row{{ '' if quotes|length == 1 else 's' }}</p>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Date</th><th>Selected plan</th><th>Recommended plan</th><th>Scenario</th><th>Period</th><th>Estimated value</th></tr></thead>
+          <tbody>
+            {% for quote in quotes %}
+              <tr>
+                <td>{{ quote.created_at }}</td>
+                <td>{{ quote.plan_name }}</td>
+                <td>{{ quote.recommended_plan_name or 'N/A' }}</td>
+                <td>{{ quote.scenario|title }}</td>
+                <td>{{ quote.years }} year{{ '' if quote.years == 1 else 's' }}</td>
+                <td>£{{ "%.2f"|format(quote.final_value) }}</td>
+              </tr>
+            {% else %}
+              <tr><td class="empty-state" colspan="6">No saved quotes yet. Save a projection to see it here.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  {% elif page == "account" %}
+    <section class="page-heading">
+      <p class="eyebrow">YOUR ACCOUNT</p>
+      <h1>Contact details</h1>
+      <p>Update the contact information stored with your account.</p>
+    </section>
+    <section class="panel account-panel">
+      <form id="account-form" class="form-stack">
+        <label for="account-name">Name</label>
+        <input id="account-name" name="name" value="{{ user.name }}" autocomplete="name" maxlength="120" required>
+        <label for="account-email">Email</label>
+        <input id="account-email" type="email" value="{{ user.email }}" autocomplete="email" readonly>
+        <label for="account-phone">Phone</label>
+        <input id="account-phone" name="phone" type="tel" value="{{ user.phone or '' }}" autocomplete="tel" maxlength="40">
+        <button type="submit" class="button button-primary">Save details</button>
+        <p id="account-message" class="form-message" role="status"></p>
+      </form>
     </section>
     <section class="panel history-panel">
       <div class="table-heading">
@@ -125,5 +198,10 @@
       <h1>EFL application</h1>
       <p>{{ message }}</p>
     </section>
+  {% endif %}
+{% endblock %}
+{% block scripts %}
+  {% if page == "quote" %}
+    <script src="{{ url_for('static', filename='js/quotes.js') }}"></script>
   {% endif %}
 {% endblock %}
