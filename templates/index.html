@@ -54,63 +54,55 @@
       </div>
     </section>
   {% elif page == "quote" %}
-    <section class="page-heading">
-      <p class="eyebrow">PLAN YOUR FUTURE</p>
-      <h1>Savings quote</h1>
-      <p>Enter your savings goals to explore the available investment plans.</p>
-    </section>
-    <section class="panel quote-layout">
-      <form id="quote-form" class="form-stack">
-        <h2>Your savings details</h2>
-        <label for="plan">Investment plan</label>
-        <select id="plan" name="plan" required>
-          {% for plan in plans %}
-            <option value="{{ plan[0] }}">{{ plan[1] }}</option>
-          {% endfor %}
-        </select>
-        <label for="lump-sum">Initial lump sum (£)</label>
-        <input id="lump-sum" name="lump_sum" type="number" min="0" step="0.01" value="1000" required>
-        <label for="monthly-amount">Monthly contribution (£)</label>
-        <input id="monthly-amount" name="monthly_amount" type="number" min="0" step="0.01" value="150" required>
-        <label class="checkbox-label"><input id="save-quote" name="save" type="checkbox"> Save this quote to my history</label>
-        <button type="submit" class="button button-primary">Compare projections</button>
+    <section class="wireframe-quote">
+      <form id="quote-form" class="quote-form">
+        <div class="quote-field quote-lump-field">
+          <span class="quote-marker marker-one" aria-hidden="true">1</span>
+          <label for="lump-sum">Lump sum (GBP)</label>
+          <input id="lump-sum" name="lump_sum" type="text" inputmode="decimal" value="1,000.00" required>
+        </div>
+        <div class="quote-field">
+          <label for="monthly-amount">Monthly (GBP)</label>
+          <input id="monthly-amount" name="monthly_amount" type="text" inputmode="decimal" value="100.00" required>
+        </div>
+        <div class="quote-field">
+          <label for="plan">Plan</label>
+          <select id="plan" name="plan_id" required>
+            {% for plan in plans %}
+              <option value="{{ plan[0] }}">Option {{ plan[0] }} {{ plan[1] }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="quote-submit-row">
+          <button type="submit" class="button button-primary">Get quote</button>
+          <span class="quote-marker marker-two" aria-hidden="true">2</span>
+        </div>
         <p id="quote-message" class="form-message" role="status"></p>
       </form>
-      <aside class="quote-aside">
-        <span class="aside-icon" aria-hidden="true">↗</span>
-        <h2>Choose with confidence</h2>
-        <p>Compare the plan limits, expected return range and monthly fee before deciding what suits your goals.</p>
-        <a class="button button-secondary" href="{{ url_for('pages.converter_page') }}">Exchange currency</a>
-      </aside>
-    </section>
-    <section id="quote-results" class="panel quote-results" aria-live="polite" hidden>
-      <div class="table-heading">
-        <div>
-          <p class="eyebrow">YOUR PROJECTION</p>
-          <h2 id="quote-result-title"></h2>
-          <p id="recommendation"></p>
+      <section id="quote-results" class="quote-results" aria-live="polite" hidden>
+        <div class="quote-result-grid">
+          <div class="projection-table-wrap">
+            <span class="quote-marker marker-three" aria-hidden="true">3</span>
+            <div class="table-scroll">
+              <table class="projection-table">
+                <thead>
+                  <tr><th>Years</th><th>Min</th><th>Max</th><th>Profit</th><th>Fees</th><th>Tax</th></tr>
+                </thead>
+                <tbody id="projection-rows"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="projection-chart-panel">
+            <span class="quote-marker marker-four" aria-hidden="true">4</span>
+            <div id="projection-chart" class="projection-chart" role="img" aria-label="Projected savings growth over 1, 5, and 10 years"></div>
+          </div>
         </div>
-        <button id="save-quote-button" type="button" class="button button-secondary" hidden>Save to history</button>
-      </div>
-      <div id="projection-chart" class="projection-chart" role="img" aria-label="Savings projection chart"></div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Scenario</th><th>Period</th><th>Estimated value</th><th>Profit</th><th>Fees</th><th>Tax</th></tr></thead>
-          <tbody id="projection-rows"></tbody>
-        </table>
-      </div>
-      <p class="form-note">Projections are estimates, not guaranteed returns. Investment values can fall as well as rise.</p>
-    </section>
-    <section class="plan-grid" aria-label="Available savings plans">
-      {% for plan in plans %}
-        <article class="panel plan-card">
-          <p class="eyebrow">PLAN {{ plan[0] }}</p>
-          <h2>{{ plan[1] }}</h2>
-          <p>Expected return: {{ plan[5] }}%–{{ plan[6] }}% p.a.</p>
-          <p>Monthly fee: {{ plan[7] }}%</p>
-          <p>Minimum monthly amount: £{{ plan[3] }}</p>
-        </article>
-      {% endfor %}
+        <section class="recommendation-box">
+          <span class="quote-marker marker-five" aria-hidden="true">5</span>
+          <h1 id="recommendation"></h1>
+          <p>Best after-tax profit for your amounts</p>
+        </section>
+      </section>
     </section>
   {% elif page == "history" %}
     <section class="page-heading">

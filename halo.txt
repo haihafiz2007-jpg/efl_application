@@ -399160,7 +399160,7 @@ home = C:\Users\LENOVO\AppData\Local\Programs\Python\Python314
 include-system-site-packages = false
 version = 3.14.7
 executable = C:\Users\LENOVO\AppData\Local\Programs\Python\Python314\python.exe
-command = C:\Users\LENOVO\AppData\Local\Programs\Python\Python314\python.exe -m venv C:\Users\LENOVO\OneDrive\Desktop\EFL APPLICATION\.venv
+command = C:\Users\LENOVO\AppData\Local\Programs\Python\Python314\python.exe -m venv C:\Users\LENOVO\OneDrive\Desktop\hnd ai oct-nov\EFL APPLICATION\.venv
 
 ===== .venv/Scripts/activate =====
 # This file must be used with "source bin/activate" *from bash*
@@ -399206,12 +399206,12 @@ case "$(uname)" in
     CYGWIN*|MSYS*|MINGW*)
         # transform D:\path\to\venv to /d/path/to/venv on MSYS and MINGW
         # and to /cygdrive/d/path/to/venv on Cygwin
-        VIRTUAL_ENV=$(cygpath 'C:\Users\LENOVO\OneDrive\Desktop\EFL APPLICATION\.venv')
+        VIRTUAL_ENV=$(cygpath 'C:\Users\LENOVO\OneDrive\Desktop\hnd ai oct-nov\EFL APPLICATION\.venv')
         export VIRTUAL_ENV
         ;;
     *)
         # use the path as-is
-        export VIRTUAL_ENV='C:\Users\LENOVO\OneDrive\Desktop\EFL APPLICATION\.venv'
+        export VIRTUAL_ENV='C:\Users\LENOVO\OneDrive\Desktop\hnd ai oct-nov\EFL APPLICATION\.venv'
         ;;
 esac
 
@@ -399251,7 +399251,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\LENOVO\OneDrive\Desktop\EFL APPLICATION\.venv"
+set "VIRTUAL_ENV=C:\Users\LENOVO\OneDrive\Desktop\hnd ai oct-nov\EFL APPLICATION\.venv"
 
 if not defined PROMPT set PROMPT=$P$G
 
@@ -399312,7 +399312,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\LENOVO\OneDrive\Desktop\EFL APPLICATION\.venv'
+set -gx VIRTUAL_ENV 'C:\Users\LENOVO\OneDrive\Desktop\hnd ai oct-nov\EFL APPLICATION\.venv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"Scripts $PATH
@@ -399972,7 +399972,7 @@ Kw4NCgMAAAAQKw4f5N8cw2MAAAAAAAAAAAAAAAACAAAAAAAAAPNUAAAAgABeAFIBSQB0AV4AUgFJAkgD
 
 ===== __pycache__/currency.cpython-314.pyc =====
 [Binary file encoded as Base64]
-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
+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
 
 ===== __pycache__/database.cpython-314.pyc =====
 [Binary file encoded as Base64]
@@ -547514,6 +547514,285 @@ td { font-size: 0.9rem; }
   .panel { border: 0; box-shadow: none; }
 }
 
+body[data-page="quote"] { background: #fff; }
+body[data-page="quote"] .site-footer { display: none; }
+.quote-window-bar {
+  position: relative;
+  display: flex;
+  width: min(1440px, calc(100% - 56px));
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+  border: 1px solid #8a9095;
+  border-radius: 15px 15px 0 0;
+  background: #858c91;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.window-dots { position: absolute; left: 24px; display: flex; gap: 10px; }
+.window-dots i { width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+.quote-site-header {
+  width: min(1440px, calc(100% - 56px));
+  min-height: 66px;
+  justify-content: stretch;
+  gap: 0;
+  margin: 0 auto;
+  padding: 0 3%;
+  border: 1px solid #ccd1d5;
+  border-top: 0;
+  background: #f7f7f7;
+  color: #505a63;
+}
+.quote-brand {
+  flex: 1;
+  color: #087c91;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.quote-site-nav {
+  display: grid;
+  flex: 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-self: stretch;
+  gap: 0;
+}
+.quote-site-nav a,
+.quote-site-nav .nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #505a63;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.quote-site-nav a:hover,
+.quote-site-nav .nav-button:hover { background: #eef1f2; color: #087c91; }
+.quote-site-nav a.active { border-bottom-color: #087c91; color: #087c91; }
+body[data-page="quote"] .page-shell {
+  width: min(1440px, calc(100% - 56px));
+  min-height: 0;
+  margin: 0 auto;
+  padding: 34px 5% 28px;
+  border: 1px solid #ccd1d5;
+  border-top: 0;
+  border-radius: 0 0 15px 15px;
+}
+.wireframe-quote { max-width: 1280px; margin: 0 auto; }
+.quote-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 36px;
+  row-gap: 16px;
+  align-items: end;
+}
+.quote-field { display: grid; min-width: 0; gap: 9px; }
+.quote-field label { margin: 0; color: #16191c; font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 700; }
+.quote-field input,
+.quote-field select {
+  width: 100%;
+  height: 64px;
+  padding: 0 17px;
+  border: 2px solid #b9bdc0;
+  border-radius: 9px;
+  background: #fff;
+  color: #777;
+  font: inherit;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+.quote-submit-row {
+  position: relative;
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+.quote-submit-row .button { min-width: 245px; min-height: 52px; border-radius: 9px; font-size: 1.15rem; }
+.quote-form > .form-message { grid-column: 1 / -1; min-height: 0; margin: 0; text-align: center; }
+.quote-results { margin-top: 21px; padding: 0; }
+.quote-form > .form-message:empty { display: none; }
+.quote-lump-field { position: relative; }
+.quote-result-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.projection-table-wrap,
+.projection-chart-panel { position: relative; min-width: 0; }
+.projection-table { width: 100%; border-collapse: collapse; text-align: center; }
+.projection-table th,
+.projection-table td {
+  height: 51px;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #bfc3c5;
+  color: #15191c;
+  font-size: clamp(0.82rem, 1.5vw, 1.12rem);
+  white-space: nowrap;
+}
+.projection-table th { background: #fff; font-weight: 700; }
+.projection-chart-panel {
+  display: flex;
+  min-height: 211px;
+  align-items: center;
+  padding: 18px 24px;
+  border: 2px solid #d5dadd;
+  border-radius: 10px;
+  background: #f3f6f7;
+}
+.projection-chart { width: 100%; margin: 0; }
+.projection-chart svg { display: block; width: 100%; height: auto; }
+.projection-chart .chart-baseline { stroke: #176f86; stroke-width: 2; }
+.projection-chart .chart-bar { fill: #087c91; }
+.recommendation-box {
+  position: relative;
+  margin-top: 21px;
+  padding: 14px 22px 15px;
+  border: 2px solid #6f9e75;
+  border-radius: 9px;
+  background: #f0f7f0;
+  color: #286333;
+}
+.recommendation-box h1 { margin: 0; font-size: clamp(1.25rem, 2.5vw, 2rem); line-height: 1.25; }
+.recommendation-box p { margin: 8px 0 0 8px; font-size: clamp(1rem, 1.8vw, 1.35rem); }
+.quote-marker {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #cf6537;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.marker-one { top: 39px; left: -43px; }
+.marker-two { top: 7px; left: calc(50% + 135px); }
+.marker-three { top: 8px; left: -43px; }
+.marker-four { top: 8px; left: 10px; }
+.marker-five { top: 14px; left: -43px; }
+
+@media (max-width: 760px) {
+  .quote-window-bar,
+  .quote-site-header,
+  body[data-page="quote"] .page-shell { width: calc(100% - 24px); }
+  .quote-window-bar { height: 50px; margin-top: 12px; font-size: 1.1rem; }
+  .window-dots { left: 14px; gap: 6px; }
+  .window-dots i { width: 13px; height: 13px; }
+  .quote-site-header { align-items: stretch; flex-direction: row; min-height: 58px; padding: 0 8px; }
+  .quote-brand { flex: 0.7; }
+  .quote-site-nav { flex: 4; }
+  .quote-site-nav a,
+  .quote-site-nav .nav-button { padding: 0.4rem 0.2rem; font-size: 0.85rem; }
+  body[data-page="quote"] .page-shell { padding: 28px 30px 24px; }
+  .quote-form { grid-template-columns: 1fr; gap: 13px; }
+  .quote-submit-row { grid-column: 1; margin-top: 2px; }
+  .quote-form > .form-message { grid-column: 1; }
+  .quote-result-grid { grid-template-columns: 1fr; gap: 20px; }
+  .projection-chart-panel { min-height: 185px; }
+  .marker-one { top: 37px; left: -34px; width: 30px; height: 30px; font-size: 1rem; }
+  .marker-three,
+  .marker-five { left: -34px; width: 30px; height: 30px; font-size: 1rem; }
+  .marker-two { left: calc(50% + 130px); width: 30px; height: 30px; font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .quote-site-header { padding: 0 4px; }
+  .quote-brand { flex: 0.55; }
+  .quote-site-nav a,
+  .quote-site-nav .nav-button { font-size: 0.74rem; }
+  body[data-page="quote"] .page-shell { padding: 25px 20px 20px; }
+  .quote-submit-row .button { min-width: 200px; }
+  .marker-two { left: calc(50% + 110px); }
+  .projection-table th,
+  .projection-table td { padding: 0.4rem 0.45rem; font-size: 0.78rem; }
+}
+
+body[data-page="quote"] {
+  background: linear-gradient(135deg, #f8f2ff 0%, #eff8ff 52%, #fff4ed 100%);
+}
+.quote-window-bar {
+  border-color: #27243d;
+  background: linear-gradient(110deg, #17162a, #252744 65%, #35254a);
+  box-shadow: 0 8px 24px rgb(34 24 61 / 18%);
+}
+.window-dots i:nth-child(1) { background: #ff6b6b; }
+.window-dots i:nth-child(2) { background: #ffd166; }
+.window-dots i:nth-child(3) { background: #35d39a; }
+.quote-site-header {
+  border-color: #e2dbee;
+  background: #fff;
+  box-shadow: 0 6px 18px rgb(46 31 82 / 8%);
+}
+.quote-brand { color: #7427ce; }
+.quote-site-nav a:hover,
+.quote-site-nav .nav-button:hover { background: #fff0f4; color: #d92e72; }
+.quote-site-nav a.active {
+  border-bottom-color: #8b35e5;
+  background: linear-gradient(180deg, #fff 0%, #f5eaff 100%);
+  color: #7427ce;
+}
+body[data-page="quote"] .page-shell {
+  border-color: #e2dbee;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 18px 42px rgb(46 31 82 / 10%);
+}
+.quote-field label { color: #191629; }
+.quote-field input,
+.quote-field select {
+  border-color: #c9c1d9;
+  box-shadow: 0 2px 6px rgb(46 31 82 / 5%);
+  color: #56516a;
+}
+.quote-field input:focus,
+.quote-field select:focus {
+  border-color: #8b35e5;
+  outline: 3px solid rgb(139 53 229 / 15%);
+  box-shadow: 0 0 0 4px rgb(139 53 229 / 9%);
+}
+.quote-submit-row .button-primary {
+  background: linear-gradient(100deg, #7c32df, #d52d87 58%, #f05b53);
+  box-shadow: 0 8px 18px rgb(156 48 183 / 24%);
+}
+.quote-submit-row .button-primary:hover {
+  background: linear-gradient(100deg, #6824c4, #bb2375 58%, #dc423c);
+}
+.projection-table th {
+  background: #f0e7ff;
+  color: #42236e;
+}
+.projection-table td { background: #fff; }
+.projection-table tbody tr:nth-child(even) td { background: #fbf8ff; }
+.projection-table th,
+.projection-table td { border-color: #d8cde8; }
+.projection-chart-panel {
+  border-color: #d9c9f4;
+  background: linear-gradient(140deg, #f4eaff, #eaf7ff 58%, #fff2ec);
+  box-shadow: inset 0 1px 5px rgb(62 38 102 / 6%);
+}
+.projection-chart .chart-baseline { stroke: #34224e; }
+.projection-chart .chart-bar-0 { fill: #ff704d; }
+.projection-chart .chart-bar-1 { fill: #8b35e5; }
+.projection-chart .chart-bar-2 { fill: #08b99c; }
+.recommendation-box {
+  border-color: #56b56d;
+  background: linear-gradient(105deg, #e8fff1, #eaf8ff 58%, #fff0f7);
+  box-shadow: 0 7px 18px rgb(34 153 94 / 12%);
+  color: #17653b;
+}
+.quote-marker { background: linear-gradient(140deg, #ff704d, #f0447b); box-shadow: 0 3px 8px rgb(198 63 77 / 25%); }
+
 ===== static/js/app.js =====
 function showMessage(id, text) {
   document.getElementById(id).textContent = text;
@@ -547728,58 +548007,68 @@ async function startConverter() {
 startConverter();
 
 ===== static/js/quotes.js =====
-function quoteMoney(value) {
-  return "£" + Number(value).toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+function quoteNumber(value) {
+  return Math.round(Number(value)).toLocaleString("en-GB");
+}
+
+function formatQuoteInput(input) {
+  const value = input.value.replace(/,/g, "").trim();
+  if (/^\d+(?:\.\d{0,2})?$/.test(value)) {
+    input.value = Number(value).toLocaleString("en-GB", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+}
+
+function quoteFormData() {
+  return {
+    plan_id: document.getElementById("plan").value,
+    lump_sum: document.getElementById("lump-sum").value.replace(/,/g, ""),
+    monthly_amount: document.getElementById("monthly-amount").value.replace(/,/g, ""),
+    save: true,
+  };
 }
 
 function renderProjectionChart(projections) {
   const years = [1, 5, 10];
   const values = years.map((year) => Number(projections.mid[String(year)].final_value));
   const max = Math.max(...values, 1);
-  const points = values.map((value, index) => {
-    const x = 50 + index * 190;
-    const y = 180 - (value / max) * 145;
-    return { x, y, value, year: years[index] };
-  });
-  const path = points.map((point, index) => `${index ? "L" : "M"} ${point.x} ${point.y}`).join(" ");
-  const markers = points.map((point) =>
-    `<circle cx="${point.x}" cy="${point.y}" r="5"></circle><text x="${point.x}" y="${point.y - 12}" text-anchor="middle">${quoteMoney(point.value)}</text><text x="${point.x}" y="210" text-anchor="middle">${point.year} year${point.year === 1 ? "" : "s"}</text>`
-  ).join("");
+  const bars = values.map((value, index) => {
+    const height = Math.max((value / max) * 150, 4);
+    return `<rect class="chart-bar chart-bar-${index}" x="${75 + index * 130}" y="${190 - height}" width="72" height="${height}"></rect>`;
+  }).join("");
   document.getElementById("projection-chart").innerHTML =
-    `<svg viewBox="0 0 480 230" role="img" aria-label="Mid-case projected savings value over time"><path class="chart-line" d="${path}"></path>${markers}</svg>`;
+    `<svg viewBox="0 0 480 210" role="img" aria-label="Estimated savings value bars at 1, 5, and 10 years">${bars}<line class="chart-baseline" x1="25" y1="190" x2="455" y2="190"></line></svg>`;
 }
 
 function displayQuote(data) {
   const results = document.getElementById("quote-results");
   results.hidden = false;
-  document.getElementById("quote-result-title").textContent = data.plan_name + " projection";
   document.getElementById("recommendation").textContent =
-    "Best 10-year estimated outcome among eligible plans: " + data.recommended_plan_name + ".";
+    "Recommended plan: Option " + data.recommended_plan_id + " " + data.recommended_plan_name;
   const rows = document.getElementById("projection-rows");
   rows.replaceChildren();
-  for (const scenario of ["low", "mid", "high"]) {
-    for (const year of [1, 5, 10]) {
-      const projection = data.projections[scenario][String(year)];
-      const row = document.createElement("tr");
-      for (const value of [
-        scenario === "mid" ? "Mid" : scenario[0].toUpperCase() + scenario.slice(1),
-        year + (year === 1 ? " year" : " years"),
-        quoteMoney(projection.final_value),
-        quoteMoney(projection.total_profit),
-        quoteMoney(projection.total_fees),
-        quoteMoney(projection.total_tax),
-      ]) {
-        const cell = document.createElement("td");
-        cell.textContent = value;
-        row.appendChild(cell);
-      }
-      rows.appendChild(row);
+  for (const year of [1, 5, 10]) {
+    const low = data.projections.low[String(year)];
+    const mid = data.projections.mid[String(year)];
+    const high = data.projections.high[String(year)];
+    const row = document.createElement("tr");
+    for (const value of [
+      year,
+      quoteNumber(low.final_value),
+      quoteNumber(high.final_value),
+      quoteNumber(mid.total_profit),
+      quoteNumber(mid.total_fees),
+      quoteNumber(mid.total_tax),
+    ]) {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.appendChild(cell);
     }
+    rows.appendChild(row);
   }
   renderProjectionChart(data.projections);
-  const saveButton = document.getElementById("save-quote-button");
-  saveButton.hidden = data.is_saved;
-  saveButton.dataset.quoteId = data.quote_id;
 }
 
 const quoteForm = document.getElementById("quote-form");
@@ -547789,24 +548078,17 @@ if (quoteForm) {
     document.getElementById("plan").value = cached.plan_id;
     document.getElementById("lump-sum").value = cached.lump_sum;
     document.getElementById("monthly-amount").value = cached.monthly_amount;
-    document.getElementById("save-quote").checked = Boolean(cached.save);
+  }
+  for (const input of document.querySelectorAll("#lump-sum, #monthly-amount")) {
+    formatQuoteInput(input);
+    input.addEventListener("blur", () => formatQuoteInput(input));
   }
   quoteForm.addEventListener("input", () => {
-    cacheForm("quote", {
-      plan_id: document.getElementById("plan").value,
-      lump_sum: document.getElementById("lump-sum").value,
-      monthly_amount: document.getElementById("monthly-amount").value,
-      save: document.getElementById("save-quote").checked,
-    });
+    cacheForm("quote", quoteFormData());
   });
   quoteForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const body = {
-      plan_id: document.getElementById("plan").value,
-      lump_sum: document.getElementById("lump-sum").value,
-      monthly_amount: document.getElementById("monthly-amount").value,
-      save: document.getElementById("save-quote").checked,
-    };
+    const body = quoteFormData();
     cacheForm("quote", body);
     showMessage("quote-message", "");
     try {
@@ -547821,21 +548103,6 @@ if (quoteForm) {
       showMessage("quote-message", "Could not reach the server. Your entries are saved on this device; try again shortly.");
     }
   });
-  document.getElementById("save-quote-button").addEventListener("click", async (event) => {
-    const button = event.currentTarget;
-    try {
-      const response = await fetch(`/api/quotes/${button.dataset.quoteId}/save`, { method: "POST" });
-      const data = await response.json();
-      if (!response.ok) {
-        showMessage("quote-message", data.error);
-        return;
-      }
-      button.hidden = true;
-      showMessage("quote-message", "Quote saved to your history.");
-    } catch (problem) {
-      showMessage("quote-message", "Could not reach the server. Your quote is still available on this page.");
-    }
-  });
 }
 
 ===== templates/base.html =====
@@ -547848,22 +548115,38 @@ if (quoteForm) {
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body data-page="{{ page|default('login') }}">
-  <header class="site-header">
-    <a class="brand" href="{{ url_for('pages.login_page') }}">
-      <span class="brand-mark">EFL</span>
-      <span>Currency and Savings</span>
-    </a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="{{ url_for('pages.login_page') }}" class="{{ 'active' if page == 'login' else '' }}">Login</a>
-      <a href="{{ url_for('pages.converter_page') }}" class="{{ 'active' if page == 'converter' else '' }}">Currency exchange</a>
-      <a href="{{ url_for('pages.quote_page') }}" class="{{ 'active' if page == 'quote' else '' }}">Savings quote</a>
-      <a href="{{ url_for('pages.history_page') }}" class="{{ 'active' if page == 'history' else '' }}">History</a>
-      {% if current_user_id %}
-        <a href="{{ url_for('pages.account_page') }}" class="{{ 'active' if page == 'account' else '' }}">Account</a>
+  {% if page == "quote" %}
+    <div class="quote-window-bar" aria-label="Savings quote">
+      <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>3. Savings quote</span>
+    </div>
+    <header class="site-header quote-site-header">
+      <a class="quote-brand" href="{{ url_for('pages.converter_page') }}">EFL</a>
+      <nav class="site-nav quote-site-nav" aria-label="Main navigation">
+        <a href="{{ url_for('pages.converter_page') }}">Convert</a>
+        <a href="{{ url_for('pages.quote_page') }}" class="active">Quote</a>
+        <a href="{{ url_for('pages.history_page') }}">History</a>
         <button id="logout-button" class="nav-button" type="button">Sign out</button>
-      {% endif %}
-    </nav>
-  </header>
+      </nav>
+    </header>
+  {% else %}
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('pages.login_page') }}">
+        <span class="brand-mark">EFL</span>
+        <span>Currency and Savings</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ url_for('pages.login_page') }}" class="{{ 'active' if page == 'login' else '' }}">Login</a>
+        <a href="{{ url_for('pages.converter_page') }}" class="{{ 'active' if page == 'converter' else '' }}">Currency exchange</a>
+        <a href="{{ url_for('pages.quote_page') }}" class="{{ 'active' if page == 'quote' else '' }}">Savings quote</a>
+        <a href="{{ url_for('pages.history_page') }}" class="{{ 'active' if page == 'history' else '' }}">History</a>
+        {% if current_user_id %}
+          <a href="{{ url_for('pages.account_page') }}" class="{{ 'active' if page == 'account' else '' }}">Account</a>
+          <button id="logout-button" class="nav-button" type="button">Sign out</button>
+        {% endif %}
+      </nav>
+    </header>
+  {% endif %}
   <main class="page-shell">
     {% block content %}{% endblock %}
   </main>
@@ -547969,63 +548252,55 @@ if (quoteForm) {
       </div>
     </section>
   {% elif page == "quote" %}
-    <section class="page-heading">
-      <p class="eyebrow">PLAN YOUR FUTURE</p>
-      <h1>Savings quote</h1>
-      <p>Enter your savings goals to explore the available investment plans.</p>
-    </section>
-    <section class="panel quote-layout">
-      <form id="quote-form" class="form-stack">
-        <h2>Your savings details</h2>
-        <label for="plan">Investment plan</label>
-        <select id="plan" name="plan" required>
-          {% for plan in plans %}
-            <option value="{{ plan[0] }}">{{ plan[1] }}</option>
-          {% endfor %}
-        </select>
-        <label for="lump-sum">Initial lump sum (£)</label>
-        <input id="lump-sum" name="lump_sum" type="number" min="0" step="0.01" value="1000" required>
-        <label for="monthly-amount">Monthly contribution (£)</label>
-        <input id="monthly-amount" name="monthly_amount" type="number" min="0" step="0.01" value="150" required>
-        <label class="checkbox-label"><input id="save-quote" name="save" type="checkbox"> Save this quote to my history</label>
-        <button type="submit" class="button button-primary">Compare projections</button>
+    <section class="wireframe-quote">
+      <form id="quote-form" class="quote-form">
+        <div class="quote-field quote-lump-field">
+          <span class="quote-marker marker-one" aria-hidden="true">1</span>
+          <label for="lump-sum">Lump sum (GBP)</label>
+          <input id="lump-sum" name="lump_sum" type="text" inputmode="decimal" value="1,000.00" required>
+        </div>
+        <div class="quote-field">
+          <label for="monthly-amount">Monthly (GBP)</label>
+          <input id="monthly-amount" name="monthly_amount" type="text" inputmode="decimal" value="100.00" required>
+        </div>
+        <div class="quote-field">
+          <label for="plan">Plan</label>
+          <select id="plan" name="plan_id" required>
+            {% for plan in plans %}
+              <option value="{{ plan[0] }}">Option {{ plan[0] }} {{ plan[1] }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="quote-submit-row">
+          <button type="submit" class="button button-primary">Get quote</button>
+          <span class="quote-marker marker-two" aria-hidden="true">2</span>
+        </div>
         <p id="quote-message" class="form-message" role="status"></p>
       </form>
-      <aside class="quote-aside">
-        <span class="aside-icon" aria-hidden="true">↗</span>
-        <h2>Choose with confidence</h2>
-        <p>Compare the plan limits, expected return range and monthly fee before deciding what suits your goals.</p>
-        <a class="button button-secondary" href="{{ url_for('pages.converter_page') }}">Exchange currency</a>
-      </aside>
-    </section>
-    <section id="quote-results" class="panel quote-results" aria-live="polite" hidden>
-      <div class="table-heading">
-        <div>
-          <p class="eyebrow">YOUR PROJECTION</p>
-          <h2 id="quote-result-title"></h2>
-          <p id="recommendation"></p>
+      <section id="quote-results" class="quote-results" aria-live="polite" hidden>
+        <div class="quote-result-grid">
+          <div class="projection-table-wrap">
+            <span class="quote-marker marker-three" aria-hidden="true">3</span>
+            <div class="table-scroll">
+              <table class="projection-table">
+                <thead>
+                  <tr><th>Years</th><th>Min</th><th>Max</th><th>Profit</th><th>Fees</th><th>Tax</th></tr>
+                </thead>
+                <tbody id="projection-rows"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="projection-chart-panel">
+            <span class="quote-marker marker-four" aria-hidden="true">4</span>
+            <div id="projection-chart" class="projection-chart" role="img" aria-label="Projected savings growth over 1, 5, and 10 years"></div>
+          </div>
         </div>
-        <button id="save-quote-button" type="button" class="button button-secondary" hidden>Save to history</button>
-      </div>
-      <div id="projection-chart" class="projection-chart" role="img" aria-label="Savings projection chart"></div>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Scenario</th><th>Period</th><th>Estimated value</th><th>Profit</th><th>Fees</th><th>Tax</th></tr></thead>
-          <tbody id="projection-rows"></tbody>
-        </table>
-      </div>
-      <p class="form-note">Projections are estimates, not guaranteed returns. Investment values can fall as well as rise.</p>
-    </section>
-    <section class="plan-grid" aria-label="Available savings plans">
-      {% for plan in plans %}
-        <article class="panel plan-card">
-          <p class="eyebrow">PLAN {{ plan[0] }}</p>
-          <h2>{{ plan[1] }}</h2>
-          <p>Expected return: {{ plan[5] }}%–{{ plan[6] }}% p.a.</p>
-          <p>Monthly fee: {{ plan[7] }}%</p>
-          <p>Minimum monthly amount: £{{ plan[3] }}</p>
-        </article>
-      {% endfor %}
+        <section class="recommendation-box">
+          <span class="quote-marker marker-five" aria-hidden="true">5</span>
+          <h1 id="recommendation"></h1>
+          <p>Best after-tax profit for your amounts</p>
+        </section>
+      </section>
     </section>
   {% elif page == "history" %}
     <section class="page-heading">
@@ -548155,7 +548430,7 @@ Kw4NCgAAAABfu+lqZgMAAOMAAAAAAAAAAAAAAAADAAAAAAAAAPNeAAAAgABeAFIBSQBIAXQBSAJ0Ah8A
 
 ===== tests/__pycache__/test_app.cpython-314-pytest-9.2.0.pyc =====
 [Binary file encoded as Base64]
-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
+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
 
 ===== tests/__pycache__/test_auth.cpython-314-pytest-9.2.0.pyc =====
 [Binary file encoded as Base64]
@@ -548254,7 +548529,14 @@ def test_wireframe_pages_render(tmp_path, monkeypatch):
     with client.session_transaction() as session:
         session["user_id"] = 1
     assert b"Currency exchange" in client.get("/converter").data
-    assert b"Savings quote" in client.get("/quote-page").data
+    quote_response = client.get("/quote-page")
+    assert b"Savings quote" in quote_response.data
+    assert b'Lump sum (GBP)' in quote_response.data
+    assert b'Monthly (GBP)' in quote_response.data
+    assert b'Get quote' in quote_response.data
+    assert b'<th>Years</th><th>Min</th><th>Max</th><th>Profit</th><th>Fees</th><th>Tax</th>' in quote_response.data
+    assert b'Best after-tax profit for your amounts' in quote_response.data
+    assert b'projection-chart' in quote_response.data
     assert b"Transaction history" in client.get("/history-page").data
 
 

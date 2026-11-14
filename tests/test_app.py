@@ -24,7 +24,14 @@ def test_wireframe_pages_render(tmp_path, monkeypatch):
     with client.session_transaction() as session:
         session["user_id"] = 1
     assert b"Currency exchange" in client.get("/converter").data
-    assert b"Savings quote" in client.get("/quote-page").data
+    quote_response = client.get("/quote-page")
+    assert b"Savings quote" in quote_response.data
+    assert b'Lump sum (GBP)' in quote_response.data
+    assert b'Monthly (GBP)' in quote_response.data
+    assert b'Get quote' in quote_response.data
+    assert b'<th>Years</th><th>Min</th><th>Max</th><th>Profit</th><th>Fees</th><th>Tax</th>' in quote_response.data
+    assert b'Best after-tax profit for your amounts' in quote_response.data
+    assert b'projection-chart' in quote_response.data
     assert b"Transaction history" in client.get("/history-page").data
 
 

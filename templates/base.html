@@ -7,22 +7,38 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body data-page="{{ page|default('login') }}">
-  <header class="site-header">
-    <a class="brand" href="{{ url_for('pages.login_page') }}">
-      <span class="brand-mark">EFL</span>
-      <span>Currency and Savings</span>
-    </a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="{{ url_for('pages.login_page') }}" class="{{ 'active' if page == 'login' else '' }}">Login</a>
-      <a href="{{ url_for('pages.converter_page') }}" class="{{ 'active' if page == 'converter' else '' }}">Currency exchange</a>
-      <a href="{{ url_for('pages.quote_page') }}" class="{{ 'active' if page == 'quote' else '' }}">Savings quote</a>
-      <a href="{{ url_for('pages.history_page') }}" class="{{ 'active' if page == 'history' else '' }}">History</a>
-      {% if current_user_id %}
-        <a href="{{ url_for('pages.account_page') }}" class="{{ 'active' if page == 'account' else '' }}">Account</a>
+  {% if page == "quote" %}
+    <div class="quote-window-bar" aria-label="Savings quote">
+      <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>3. Savings quote</span>
+    </div>
+    <header class="site-header quote-site-header">
+      <a class="quote-brand" href="{{ url_for('pages.converter_page') }}">EFL</a>
+      <nav class="site-nav quote-site-nav" aria-label="Main navigation">
+        <a href="{{ url_for('pages.converter_page') }}">Convert</a>
+        <a href="{{ url_for('pages.quote_page') }}" class="active">Quote</a>
+        <a href="{{ url_for('pages.history_page') }}">History</a>
         <button id="logout-button" class="nav-button" type="button">Sign out</button>
-      {% endif %}
-    </nav>
-  </header>
+      </nav>
+    </header>
+  {% else %}
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('pages.login_page') }}">
+        <span class="brand-mark">EFL</span>
+        <span>Currency and Savings</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ url_for('pages.login_page') }}" class="{{ 'active' if page == 'login' else '' }}">Login</a>
+        <a href="{{ url_for('pages.converter_page') }}" class="{{ 'active' if page == 'converter' else '' }}">Currency exchange</a>
+        <a href="{{ url_for('pages.quote_page') }}" class="{{ 'active' if page == 'quote' else '' }}">Savings quote</a>
+        <a href="{{ url_for('pages.history_page') }}" class="{{ 'active' if page == 'history' else '' }}">History</a>
+        {% if current_user_id %}
+          <a href="{{ url_for('pages.account_page') }}" class="{{ 'active' if page == 'account' else '' }}">Account</a>
+          <button id="logout-button" class="nav-button" type="button">Sign out</button>
+        {% endif %}
+      </nav>
+    </header>
+  {% endif %}
   <main class="page-shell">
     {% block content %}{% endblock %}
   </main>
